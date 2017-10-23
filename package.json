@@ -1,0 +1,39 @@
+{
+  "name": "react-osx-dock",
+  "version": "0.0.0",
+  "description": "OS X dock as a React component.",
+  "author": "Luke Horvat",
+  "license": "MIT",
+  "repository": "lukehorvat/react-osx-dock",
+  "main": "dist",
+  "scripts": {
+    "build": "node_modules/.bin/babel lib -d dist -q",
+    "prebuild": "node_modules/.bin/rimraf dist",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "rimraf": "2.5.4"
+  },
+  "peerDependencies": {
+    "react": ">= 16.0.0"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "osx",
+    "mac",
+    "dock"
+  ],
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ]
+  }
+}
