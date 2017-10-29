@@ -2,6 +2,8 @@
 
 OS X dock as a [React](https://reactjs.org) component.
 
+View a demo [here](https://lukehorvat.github.io/react-osx-dock).
+
 ## Installation
 
 Install the package with NPM:
