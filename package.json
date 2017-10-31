@@ -1,7 +1,7 @@
 {
   "name": "react-osx-dock",
   "version": "0.0.0",
-  "description": "OS X dock as a React component.",
+  "description": "Mac OS X dock as a React component.",
   "author": "Luke Horvat",
   "license": "MIT",
   "repository": "lukehorvat/react-osx-dock",
