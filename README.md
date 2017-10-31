@@ -51,3 +51,7 @@ Name | Description | Type | Required
 ---- | ----------- | ---- | --------
 `className` | The dock item's CSS class. | string | no <br><br> default: `undefined`
 `onClick` | The dock item's mouse click event handler. | function | no <br><br> default: `undefined`
+
+## Contributing
+
+Pull requests are most welcome. Clone this repository and run `npm test` to test/debug your code changes.
