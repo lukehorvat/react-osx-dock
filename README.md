@@ -61,3 +61,12 @@ Name | Description | Type | Required
 ## Contributing
 
 Pull requests are most welcome. Clone this repository and run `npm test` to test/debug your code changes.
+
+## Credits
+
+The demo website uses a couple of free icon packs from [FlatIcon](https://flaticon.com):
+
+- [Social icons](https://flaticon.com/packs/glypho) designed by Bogdan Rosu.
+- [Pokémon icons](https://flaticon.com/packs/pokemon-go) designed by Roundicons Freebies.
+
+Thanks!
