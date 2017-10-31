@@ -1,6 +1,8 @@
 # react-osx-dock [![NPM version](http://img.shields.io/npm/v/react-osx-dock.svg?style=flat-square)](https://www.npmjs.com/package/react-osx-dock)
 
-Mac OS X dock as a [React](https://reactjs.org) component.
+[React](https://reactjs.org) component that is magnifiable like the Mac OS X dock.
+
+Works in any Web browser that supports CSS [grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) and [flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout) layout.
 
 View a demo [here](https://lukehorvat.github.io/react-osx-dock).
 

@@ -1,7 +1,7 @@
 {
   "name": "react-osx-dock",
   "version": "0.0.0",
-  "description": "Mac OS X dock as a React component.",
+  "description": "React component that is magnifiable like the Mac OS X dock.",
   "author": "Luke Horvat",
   "license": "MIT",
   "repository": "lukehorvat/react-osx-dock",
@@ -33,7 +33,8 @@
     "component",
     "osx",
     "mac",
-    "dock"
+    "dock",
+    "magnifiable"
   ],
   "babel": {
     "presets": [
