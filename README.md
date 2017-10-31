@@ -27,3 +27,27 @@ import Dock from "react-osx-dock";
   ))}
 </Dock>
 ```
+
+## API
+
+### Dock
+
+React component that accepts [Dock.Item](#dockitem)s as children, and the following props:
+
+Name | Description | Type | Required
+---- | ----------- | ---- | --------
+`width` | The width of the dock in pixels. | number | yes
+`magnification` | The level of dock magnification. | number | no <br><br> default: `1`
+`magnifyDirection` | The vertical direction that dock items grow when magnified. | string enum <br><br> (`"up"`, `"down"`, `"center"`) | no <br><br> default: `"up"`
+`className` | The dock's CSS class. | string | no <br><br> default: `undefined`
+`backgroundClassName` | The dock background's CSS class. | string | no <br><br> default: `undefined`
+`debug` | Whether to render dock sub-component bounding boxes or not. Useful for debugging! | boolean | no <br><br> default: `false`
+
+### Dock.Item
+
+React component that accepts any HTML/React elements as children, and the following props:
+
+Name | Description | Type | Required
+---- | ----------- | ---- | --------
+`className` | The dock item's CSS class. | string | no <br><br> default: `undefined`
+`onClick` | The dock item's mouse click event handler. | function | no <br><br> default: `undefined`
