@@ -19,7 +19,7 @@ Example:
 ```javascript
 import Dock from "react-osx-dock";
 
-<Dock width={800} magnification={2}>
+<Dock width={800} magnification={2} magnifyDirection="up">
   {["a", "b", "c", "d", "e"].map((item, index) => (
     <Dock.Item key={index} onClick={() => console.log(item)}>
       <img src={`${item}.png`} />
@@ -37,8 +37,8 @@ React component that accepts [Dock.Item](#dockitem)s as children, and the follow
 Name | Description | Type | Required
 ---- | ----------- | ---- | --------
 `width` | The width of the dock in pixels. | number | yes
-`magnification` | The level of dock magnification. | number | no <br><br> default: `1`
-`magnifyDirection` | The vertical direction that dock items grow when magnified. | string enum <br><br> (`"up"`, `"down"`, `"center"`) | no <br><br> default: `"up"`
+`magnification` | The level of dock magnification produced on mouse-over. | number | yes
+`magnifyDirection` | The vertical direction that dock items grow when magnified. | string enum <br><br> (`"up"`, `"down"`, `"center"`) | yes
 `className` | The dock's CSS class. | string | no <br><br> default: `undefined`
 `backgroundClassName` | The dock background's CSS class. | string | no <br><br> default: `undefined`
 `debug` | Whether to render dock sub-component bounding boxes or not. Useful for debugging! | boolean | no <br><br> default: `false`

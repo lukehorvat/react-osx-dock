@@ -132,10 +132,22 @@ export default class extends React.Component {
   }
 
   get magnification() {
-    return Math.max(this.props.magnification, 0);
+    let { magnification } = this.props;
+
+    if (magnification == undefined || isNaN(magnification) || magnification < 0) {
+      throw new Error("Invalid magnification.");
+    }
+
+    return magnification;
   }
 
   get magnifyDirection() {
-    return this.props.magnifyDirection || "up";
+    let { magnifyDirection } = this.props;
+
+    if (!["up", "down", "center"].includes(magnifyDirection)) {
+      throw new Error("Invalid magnify direction.");
+    }
+
+    return magnifyDirection;
   }
 }
