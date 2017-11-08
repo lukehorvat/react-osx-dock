@@ -7,12 +7,8 @@ import DockOffset from "./dock-offset";
 export default class extends React.Component {
   static Item = DockItem;
 
-  constructor(props) {
-    super(props);
-
-    this.state = { magnifierX: null, };
-  }
-
+  state = { magnifierX: null };
+  
   render() {
     let offsetLeft = this.state.magnifierX === null ? this.unmagnifiedDockOffsetLeft : this.magnifiedDockOffsetLeft;
     let offsetRight = this.state.magnifierX === null ? this.unmagnifiedDockOffsetRight : this.magnifiedDockOffsetRight;
