@@ -57,6 +57,8 @@ Name | Description | Type | Required
 ---- | ----------- | ---- | --------
 `className` | The dock item's CSS class. | string | no <br><br> default: `undefined`
 `onClick` | The dock item's mouse click event handler. | function | no <br><br> default: `undefined`
+`onMouseOver` | The dock item's mouse over event handler. | function | no <br><br> default: `undefined`
+`onMouseOut` | The dock item's mouse out event handler. | function | no <br><br> default: `undefined`
 
 ## Contributing
 

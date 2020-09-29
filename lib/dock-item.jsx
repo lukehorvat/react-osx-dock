@@ -2,7 +2,7 @@ import React from "react";
 
 export default function(props) {
   return (
-    <div className={props.className} onClick={props.onClick} style={{
+    <div className={props.className} onClick={props.onClick} onMouseOver={props.onMouseOver} onMouseOut={props.onMouseOut} style={{
       width: `${props.width}px`,
       height: `${props.width}px`,
       display: "flex",
