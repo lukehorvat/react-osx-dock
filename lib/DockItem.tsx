@@ -10,10 +10,6 @@ export function DockItem(props: {
       style={{
         width: `${props.width}px`,
         height: `${props.width}px`,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         boxSizing: 'border-box',
         border: props.debug ? '1px solid red' : undefined,
         zIndex: 1,

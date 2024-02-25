@@ -1,0 +1,22 @@
+.debug-example {
+  background-color: #333;
+}
+
+.debug-example .dock {
+  align-self: flex-end;
+}
+
+.debug-example .dock .dock-item .letter {
+  width: 70%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.debug-example .dock .dock-background {
+  background-color: #aaa;
+  opacity: 0.6;
+}

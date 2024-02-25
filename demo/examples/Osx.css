@@ -1,0 +1,37 @@
+.osx-example {
+  background-image: url('images/osx/background.jpg');
+  background-color: #886e96;
+  background-position: center;
+  background-size: cover;
+}
+
+.osx-example .dock {
+  align-self: flex-end;
+}
+
+.osx-example .dock .dock-item {
+  padding: 6px 0px 3px 0px;
+  --active-indicator-height: 4px;
+  --active-indicator-margin: 2px;
+}
+
+.osx-example .dock .dock-item img {
+  height: calc(
+    100% - var(--active-indicator-height) - var(--active-indicator-margin)
+  );
+}
+
+.osx-example .dock .dock-item .active-indicator {
+  width: var(--active-indicator-height);
+  height: var(--active-indicator-height);
+  margin-top: var(--active-indicator-margin);
+  background-color: #444;
+  border-radius: 50%;
+}
+
+.osx-example .dock .dock-background {
+  background-color: #ccc;
+  opacity: 0.6;
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: 1px 1px 50px 4px rgba(0, 0, 0, 0.8);
+}

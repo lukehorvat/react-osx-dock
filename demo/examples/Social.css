@@ -1,0 +1,21 @@
+.social-example {
+  background-image: url('images/social/background.png');
+  background-color: #00913f;
+  background-repeat: repeat;
+}
+
+.social-example .dock {
+  align-self: flex-start;
+}
+
+.social-example .dock .dock-item {
+  padding: 24px 0px 16px 0px;
+}
+
+.social-example .dock .dock-item a {
+  height: 100%;
+}
+
+.social-example .dock .dock-item a img {
+  height: 100%;
+}
