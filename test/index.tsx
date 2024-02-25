@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Dock, DockItem } from '../';
+import { Dock } from '../lib';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
@@ -13,14 +13,13 @@ root.render(
     debug
   >
     {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'].map((letter) => (
-      <DockItem
+      <div
         key={letter}
-        width={0} // TODO: Should not need to specify this.
         className="dock-item"
         onClick={() => console.log(letter)}
       >
         <span>{letter}</span>
-      </DockItem>
+      </div>
     ))}
   </Dock>
 );
