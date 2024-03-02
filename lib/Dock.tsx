@@ -15,7 +15,7 @@ export function Dock(props: {
   const [magnifierX, setMagnifierX] = React.useState<number | null>(null);
   const onMagnify: React.MouseEventHandler = (event) => {
     const boundingBox = event.currentTarget.getBoundingClientRect();
-    const x = event.clientX - boundingBox.left - unmagnifiedDockOffsetLeft;
+    const x = event.clientX - boundingBox.left - unmagnifiedDockOffset / 2;
     if (x >= 0 && x < unmagnifiedDockWidth) {
       setMagnifierX(x);
     } else {
@@ -25,51 +25,39 @@ export function Dock(props: {
   const onUnmagnify = () => {
     setMagnifierX(null);
   };
-  const computeDockItemWidths = (x: number | null = null): number[] => {
-    return React.Children.map(props.children, (item, index) => {
-      if (x === null) return unmagnifiedDockItemWidth;
-
-      const itemCenter =
-        unmagnifiedDockItemWidth * index + unmagnifiedDockItemWidth / 2;
-      const distance = Math.abs(x - itemCenter);
-      const distancePercent = Math.max(
-        1 - distance / (unmagnifiedDockItemWidth * magnifierRadius),
-        0
-      );
-      return (
-        unmagnifiedDockItemWidth +
-        unmagnifiedDockItemWidth * distancePercent * props.magnification
-      );
-    })!;
-  };
-  const magnifierRadius = 3; // Number of items affected by magnification in a particular direction.
   const unmagnifiedDockItemWidth =
     props.width / React.Children.count(props.children);
-  const unmagnifiedDockItemWidths = computeDockItemWidths();
-  const magnifiedDockItemWidths = computeDockItemWidths(magnifierX);
-  const itemWidths =
-    magnifierX === null ? unmagnifiedDockItemWidths : magnifiedDockItemWidths;
-  const unmagnifiedDockWidth = sum(unmagnifiedDockItemWidths);
-  const magnifiedDockWidth = sum(magnifiedDockItemWidths);
-  const maxMagnifiedDockWidth =
-    // The dock's width will be maximum when the mouse is magnifying the center of it.
-    sum(computeDockItemWidths(unmagnifiedDockWidth / 2));
-  const unmagnifiedDockOffset = Math.abs(
-    unmagnifiedDockWidth - maxMagnifiedDockWidth
-  );
-  const unmagnifiedDockOffsetLeft = unmagnifiedDockOffset / 2;
-  const unmagnifiedDockOffsetRight = unmagnifiedDockOffsetLeft;
-  const magnifiedDockOffset = Math.abs(
-    magnifiedDockWidth - maxMagnifiedDockWidth
-  );
-  const magnifiedDockOffsetLeft =
-    magnifierX! < unmagnifiedDockWidth / 2 ? magnifiedDockOffset : 0;
-  const magnifiedDockOffsetRight =
-    magnifierX! >= unmagnifiedDockWidth / 2 ? magnifiedDockOffset : 0;
+  const magnifierRadius = unmagnifiedDockItemWidth * 3;
+  const unmagnifiedDockOffset = magnifierRadius * props.magnification;
+  const unmagnifiedDockWidth =
+    unmagnifiedDockItemWidth * React.Children.count(props.children);
+  const maxMagnifiedDockWidth = unmagnifiedDockWidth + unmagnifiedDockOffset;
+  const itemWidths = React.Children.map(props.children, (child, index) => {
+    if (magnifierX === null) return unmagnifiedDockItemWidth;
+    const itemCenter =
+      unmagnifiedDockItemWidth * index + unmagnifiedDockItemWidth / 2;
+    const distanceFromItemCenter = Math.abs(magnifierX - itemCenter);
+    const magnifierStrength =
+      // An item is most magnified when the magnifier is positioned over its center.
+      Math.max(1 - distanceFromItemCenter / magnifierRadius, 0);
+    return (
+      unmagnifiedDockItemWidth * (1 + magnifierStrength * props.magnification)
+    );
+  })!;
+  const dockWidth = itemWidths.reduce((sum, itemWidth) => sum + itemWidth, 0);
+  const dockOffset = Math.abs(maxMagnifiedDockWidth - dockWidth);
   const offsetLeft =
-    magnifierX === null ? unmagnifiedDockOffsetLeft : magnifiedDockOffsetLeft;
+    magnifierX === null
+      ? unmagnifiedDockOffset / 2
+      : magnifierX < unmagnifiedDockWidth / 2
+      ? dockOffset
+      : 0;
   const offsetRight =
-    magnifierX === null ? unmagnifiedDockOffsetRight : magnifiedDockOffsetRight;
+    magnifierX === null
+      ? unmagnifiedDockOffset / 2
+      : magnifierX >= unmagnifiedDockWidth / 2
+      ? dockOffset
+      : 0;
 
   return (
     <div
@@ -104,8 +92,4 @@ export function Dock(props: {
       />
     </div>
   );
-}
-
-function sum(values: number[]): number {
-  return values.reduce((result, value) => result + value, 0);
 }
