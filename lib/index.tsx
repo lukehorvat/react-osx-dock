@@ -1,1 +1,1 @@
-export { DockContainer as Dock } from './DockContainer';
+export { Dock } from './Dock';
