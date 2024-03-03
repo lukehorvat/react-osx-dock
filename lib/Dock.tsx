@@ -11,7 +11,7 @@ export function Dock(props: {
   backgroundClassName?: string;
   debug?: boolean;
   children?: React.ReactNode;
-}) {
+}): React.JSX.Element {
   const [magnifierX, setMagnifierX] = React.useState<number | null>(null);
   const unmagnifiedItemWidth =
     props.width / React.Children.count(props.children);
