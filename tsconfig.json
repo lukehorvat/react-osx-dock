@@ -10,6 +10,5 @@
     "declaration": true,
     "jsx": "react"
   },
-  "include": ["lib"],
-  "exclude": ["node_modules"]
+  "include": ["lib"]
 }
