@@ -33,6 +33,11 @@ export function Dock(props: {
   })!;
   const dockWidth = itemWidths.reduce((sum, itemWidth) => sum + itemWidth, 0);
   const offsetWidth = Math.abs(maxDockWidth - dockWidth);
+
+  // FIXME: This approach of applying the offset to only one side of the dock and
+  // forcing the other side's offset to be zero is... bad. When the dock has less
+  // than 5 items it simply won't work properly. Instead we should calculate an
+  // independent offset for each side based on dock width and mouse position.
   const leftOffsetWidth =
     magnifierX === null
       ? maxOffsetWidth / 2
