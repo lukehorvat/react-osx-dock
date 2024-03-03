@@ -18,8 +18,8 @@ export function PokemonExample() {
     <Dock
       className="dock"
       backgroundClassName="dock-background"
-      width={Math.min(700, window.innerWidth * 0.5)}
-      magnification={1}
+      itemWidth={60}
+      magnification={0.9}
       magnifyDirection="center"
       debug={false}
     >

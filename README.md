@@ -23,7 +23,7 @@ Example:
 ```jsx
 import { Dock } from 'react-osx-dock';
 
-<Dock width={800} magnification={2} magnifyDirection="up">
+<Dock itemWidth={50} magnification={2} magnifyDirection="up">
   {['A', 'B', 'C', 'D', 'E', 'F', 'G'].map((letter) => (
     <img
       className="letter"
@@ -41,8 +41,8 @@ The `Dock` component has the following props:
 
 | Name                  | Description                                                         | Type                                                | Required                         |
 | --------------------- | ------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------- |
-| `width`               | The width of the dock in pixels.                                    | number                                              | yes                              |
-| `magnification`       | The level of dock magnification produced on mouse-over.             | number                                              | yes                              |
+| `itemWidth`           | The default (i.e. unmagnified) width of dock items in pixels.       | number                                              | yes                              |
+| `magnification`       | The % amount of dock item magnification produced on mouse-over.     | number                                              | yes                              |
 | `magnifyDirection`    | The vertical direction that dock items grow when magnified.         | string enum <br><br> (`"up"`, `"down"`, `"center"`) | yes                              |
 | `className`           | The dock's CSS class.                                               | string                                              | no <br><br> default: `undefined` |
 | `backgroundClassName` | The dock background's CSS class.                                    | string                                              | no <br><br> default: `undefined` |

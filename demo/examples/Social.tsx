@@ -33,7 +33,7 @@ export function SocialExample() {
   return (
     <Dock
       className="dock"
-      width={Math.min(700, window.innerWidth * 0.5)}
+      itemWidth={75}
       magnification={0.7}
       magnifyDirection="down"
       debug={false}

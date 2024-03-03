@@ -7,12 +7,12 @@ export function DebugExample() {
     <Dock
       className="dock"
       backgroundClassName="dock-background"
-      width={Math.min(800, window.innerWidth * 0.6)}
-      magnification={0.8}
+      itemWidth={50}
+      magnification={1}
       magnifyDirection="up"
       debug={true}
     >
-      {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'].map((letter) => (
+      {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'].map((letter) => (
         <div
           key={letter}
           className="dock-item"

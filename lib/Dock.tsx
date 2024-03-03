@@ -4,7 +4,7 @@ import { DockOffset } from './DockOffset';
 import { MagnifyDirection } from './MagnifyDirection';
 
 export function Dock(props: {
-  width: number;
+  itemWidth: number;
   magnification: number;
   magnifyDirection: MagnifyDirection;
   className?: string;
@@ -13,8 +13,7 @@ export function Dock(props: {
   children?: React.ReactNode;
 }): React.JSX.Element {
   const [magnifierX, setMagnifierX] = React.useState<number | null>(null);
-  const unmagnifiedItemWidth =
-    props.width / React.Children.count(props.children);
+  const unmagnifiedItemWidth = props.itemWidth;
   const unmagnifiedDockWidth =
     unmagnifiedItemWidth * React.Children.count(props.children);
   const magnifierRadius =

@@ -33,7 +33,7 @@ export function OsxExample() {
     <Dock
       className="dock"
       backgroundClassName="dock-background"
-      width={Math.min(800, window.innerWidth * 0.6)}
+      itemWidth={50}
       magnification={0.8}
       magnifyDirection="up"
       debug={false}
