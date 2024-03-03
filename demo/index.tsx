@@ -16,7 +16,7 @@ export function App() {
   return (
     <div className={`app ${example}-example`}>
       <div className="example-selector">
-        <div className="header">Example:</div>
+        <div className="header">Examples:</div>
         <ul>
           <li>
             <a
@@ -55,6 +55,9 @@ export function App() {
             </a>
           </li>
         </ul>
+        <a href="https://github.com/lukehorvat/react-osx-dock" className="fork">
+          View on GitHub
+        </a>
       </div>
 
       {example === 'osx' && <OsxExample />}

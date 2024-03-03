@@ -49,6 +49,13 @@ body,
   cursor: inherit;
 }
 
+.example-selector a.fork {
+  display: block;
+  margin-top: 12px;
+  color: inherit;
+  font-size: x-small;
+}
+
 .dock {
   z-index: 0;
 }
