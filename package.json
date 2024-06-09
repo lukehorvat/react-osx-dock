@@ -13,8 +13,8 @@
   "scripts": {
     "build": "tsc",
     "prebuild": "rimraf dist",
-    "demo-start": "webpack serve --mode development --config demo/webpack.config.js",
-    "demo-build": "webpack --mode production --config demo/webpack.config.js"
+    "demo-start": "webpack serve --mode development --config demo/webpack.config.mjs",
+    "demo-build": "webpack --mode production --config demo/webpack.config.mjs"
   },
   "dependencies": {},
   "devDependencies": {
